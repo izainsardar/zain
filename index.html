@@ -585,6 +585,62 @@
     border-top: 1px solid var(--glass-border);
   }
 
+  .venture-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 18px;
+  }
+
+  .venture-website-btn {
+    font-size: 11px;
+    padding: 10px 22px;
+    letter-spacing: 0.14em;
+    white-space: nowrap;
+  }
+
+  /* Featured venture card (full-width, newest) */
+  .venture-card--featured {
+    grid-column: 1 / -1;
+    border-color: rgba(201,168,76,0.14);
+  }
+  .venture-featured-inner {
+    display: flex;
+    gap: 56px;
+    align-items: center;
+  }
+  .venture-featured-left {
+    flex: 1;
+    min-width: 0;
+  }
+  .venture-featured-right {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    padding-left: 56px;
+    border-left: 1px solid var(--glass-border);
+  }
+  .venture-name-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--gold-bright);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+  }
+  .venture-name-link svg {
+    opacity: 0.45;
+    transition: opacity 0.3s, transform 0.3s;
+    flex-shrink: 0;
+  }
+  .venture-name-link:hover { color: #f0d080; }
+  .venture-name-link:hover svg { opacity: 1; transform: translate(2px, -2px); }
+
   /* Current banner */
   .current-banner {
     background: var(--glass-bg);
@@ -754,6 +810,16 @@
     }
 
     .ventures-grid { grid-template-columns: 1fr; }
+    .venture-card--featured { grid-column: 1; }
+    .venture-featured-inner { flex-direction: column; gap: 28px; }
+    .venture-featured-right {
+      align-items: flex-start;
+      padding-left: 0;
+      border-left: none;
+      border-top: 1px solid var(--glass-border);
+      padding-top: 24px;
+      width: 100%;
+    }
 
     .current-banner {
       flex-direction: column;
@@ -807,7 +873,7 @@
   <div class="hero-inner">
     <!-- Left col -->
     <div class="hero-left">
-      <p class="hero-label reveal">Founder · Civic Entrepreneur · Lahore, PK</p>
+      <p class="hero-label reveal">Founder · Entrepreneur · Capitalist</p>
       <h1 class="hero-name reveal reveal-delay-1">Muhammad <span class="name-accent">Zain</span></h1>
       <div class="typewriter-wrap reveal reveal-delay-2">
         <span class="typewriter-text" id="typewriter"></span><span class="cursor-blink">|</span>
@@ -880,8 +946,39 @@
     <div class="section-label">Ventures</div>
 
     <div class="ventures-grid">
-      <!-- Card 1 -->
-      <div class="venture-card reveal">
+      <!-- Card 1 – Mukhtar (featured, full-width) -->
+      <div class="venture-card venture-card--featured reveal">
+        <div class="venture-featured-inner">
+          <div class="venture-featured-left">
+            <div class="venture-header">
+              <a href="https://mukhtar.com.pk" target="_blank" rel="noopener" class="venture-name-link">
+                Mukhtar
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+              <span class="badge-active">Active</span>
+            </div>
+            <p class="venture-desc">
+              A B2B corporate concierge built for businesses that demand operational excellence without the overhead of managing it themselves. Mukhtar serves as an outsourced service layer — fielding, coordinating, and delivering the full range of corporate requirements through a vetted professional network, with precision and discretion at every touchpoint.
+            </p>
+            <div class="venture-tags">
+              <span class="tag">Corporate Concierge</span>
+              <span class="tag">B2B</span>
+              <span class="tag">Outsourced Operations</span>
+              <span class="tag">Vendor Network</span>
+              <span class="tag">Pakistan</span>
+            </div>
+          </div>
+          <div class="venture-featured-right">
+            <div class="venture-role" style="border-top:none; padding-top:0;">Founder &amp; CEO</div>
+            <a href="https://mukhtar.com.pk" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size:11px; padding:10px 22px; letter-spacing:0.14em; white-space:nowrap;">
+              mukhtar.com.pk &nbsp;<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="venture-card reveal reveal-delay-1">
         <div class="venture-header">
           <span class="venture-name">Safak Pakistan</span>
           <span class="badge-active">Active</span>
@@ -896,10 +993,13 @@
           <span class="tag">Youth Leadership</span>
         </div>
         <div class="venture-role">Secretary-General &amp; Co-Founder · Feb 2026 – Present</div>
+        <div class="venture-actions">
+          <a href="https://safakpakistan.github.io/website/#" target="_blank" rel="noopener" class="btn btn-ghost venture-website-btn">Website</a>
+        </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="venture-card reveal reveal-delay-1">
+      <!-- Card 3 -->
+      <div class="venture-card reveal reveal-delay-2">
         <div class="venture-header">
           <span class="venture-name">Empowerment Pathways Network</span>
         </div>
@@ -914,8 +1014,8 @@
         <div class="venture-role">CEO &amp; Founder · Aug 2023 – 2025</div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="venture-card reveal reveal-delay-2">
+      <!-- Card 4 -->
+      <div class="venture-card reveal reveal-delay-3">
         <div class="venture-header">
           <span class="venture-name">Alma Eats</span>
         </div>
