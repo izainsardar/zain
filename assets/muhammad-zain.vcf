@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Muhammad Zain;;;
+FN:Muhammad Zain
+ORG:Mukhtar
+TITLE:Founder & Chief Executive
+EMAIL;TYPE=INTERNET,WORK:ceo@mukhtar.com.pk
+TEL;TYPE=CELL,VOICE:+923037312747
+URL:https://izainsardar.github.io/zain/
+item1.URL:https://mukhtar.com.pk
+item1.X-ABLabel:Mukhtar
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/mdzainsardar
+ADR;TYPE=WORK:;;;Lahore;;;Pakistan
+NOTE:Director\, Project Governance & Digitalization\, Al-Meezan Engineering & Management Services. Secretary-General & Co-Founder\, Safak Pakistan.
+END:VCARD
