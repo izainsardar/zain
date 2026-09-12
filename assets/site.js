@@ -45,7 +45,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+  }, { rootMargin: '0px 0px -5% 0px', threshold: 0 });
 
   items.forEach(function (el) { observer.observe(el); });
   document.documentElement.classList.add('js-reveal');

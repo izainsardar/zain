@@ -109,6 +109,14 @@ main:focus { outline: none; }
 }
 .skip:focus { transform: none; }
 
+/* Keep content clear of the notch and rounded corners; backgrounds still bleed full width */
+@supports (padding: env(safe-area-inset-left)) {
+  .nav, .hero, .intro, .current, .previously, .contact, .footer {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
 /* ---------- Shared controls ---------- */
 
 .pill {
@@ -630,6 +638,8 @@ main:focus { outline: none; }
 .email {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
+  padding-block: 4px;
   gap: .16em;
   max-width: 100%;
   margin-top: 2px;
@@ -720,6 +730,7 @@ main:focus { outline: none; }
   transform: translate3d(0, 24px, 0);
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .reveal { transition: none; }
   .js-reveal .reveal:not(.is-in) { opacity: 1; transform: none; }
 }
